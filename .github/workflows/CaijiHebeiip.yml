@@ -37,7 +37,7 @@ jobs:
           mkdir -p txt logs ip template
 
       # ==========【修复：生成到ip文件夹，python脚本才能读到】==========
-      - name: 临时生成山西联通IP段配置文件(来自Secret，不存入仓库)
+      - name: 临时生成河北联通IP段配置文件(来自Secret，不存入仓库)
         env:
           HBLT_IP_CONTENT: ${{ secrets.HBLT_IP_CONFIG }}
         run: |
@@ -48,7 +48,7 @@ jobs:
           wc -l ip/Hebei_liantong_ip_config.txt
 
       # ========== 生成频道模板文件到 template/ 目录【新增】==========
-      - name: 临时生成山西频道模板(Secret保存，不进仓库)
+      - name: 临时生成河北频道模板(Secret保存，不进仓库)
         env:
           HBLT_TPL_CONTENT: ${{ secrets.HBLT_TPL_CONFIG }}
         run: |
